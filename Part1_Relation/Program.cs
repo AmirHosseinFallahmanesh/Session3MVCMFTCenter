@@ -8,8 +8,14 @@ namespace Part1_Relation
     {//eager loading
         static void Main(string[] args)
         {
-          
-
+            SampleContext context = new SampleContext();
+            Book book = new Book()
+            {
+                Title = "Perl Programming",
+               AuthorId=1
+            };
+            context.Books.Add(book);
+            context.SaveChanges();
             Console.WriteLine("Done!!!");
             Console.Read();
 
